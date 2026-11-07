@@ -1,0 +1,25 @@
+#ifndef CONSTITUTIVE_MODEL_H
+#define CONSTITUTIVE_MODEL_H
+
+// ===========================================================================
+// GENERATED FILE - DO NOT EDIT.
+// CMake generates this umbrella header from ConstitutiveModel.h.in by globbing
+// every *.h in Physics/ConstitutiveModel/ (see Lib/Ziran/CMakeLists.txt).
+// To add a constitutive model: just drop its header into this directory and
+// re-run cmake -- it will be picked up automatically, no edit here needed.
+// ===========================================================================
+
+#include <Ziran/CS/Util/BinaryIO.h>
+#include <Ziran/Math/Linear/DenseExt.h>
+#include <Ziran/Math/Linear/ImplicitQRSVD.h>
+// Foundational headers first: some model headers are not self-contained and
+// rely on AttributeName/DataManager and the HyperelasticTraits primary template
+// already being visible.
+#include <Ziran/CS/DataStructure/DataManager.h>
+#include <Ziran/Physics/ConstitutiveModel/HyperelasticConstitutiveModel.h>
+
+@ZIRAN_CONSTITUTIVE_MODEL_INCLUDES@
+
+namespace ZIRAN {
+} // namespace ZIRAN
+#endif

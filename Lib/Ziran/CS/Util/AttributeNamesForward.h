@@ -1,0 +1,174 @@
+#ifndef ATTRIBUTE_NAMES_FORWARD_H
+#define ATTRIBUTE_NAMES_FORWARD_H
+#include <Ziran/CS/DataStructure/DataManager.h>
+
+namespace ZIRAN {
+
+// Previously on Projects/mpm/JBasedMpmForceHelper
+template <class T> inline static AttributeName<T> element_measure_name() {
+  return AttributeName<T>("element measure");
+}
+
+template <class T> inline static AttributeName<T> J_name() {
+  return AttributeName<T>("J");
+}
+
+template <class T> inline static AttributeName<T> ether_drag_name() {
+  return AttributeName<T>("ether");
+}
+
+template <class TM> inline static AttributeName<TM> C_name() {
+  return AttributeName<TM>("C");
+}
+
+// For multiphase mpm, i.e. beach
+template <class T> inline static AttributeName<T> volume_fraction_name() {
+  return AttributeName<T>("volume fraction");
+}
+
+template <class T>
+inline static AttributeName<T> surface_tension_coefficient_name() {
+  return AttributeName<T>("surface tension");
+}
+
+template <class T>
+inline static AttributeName<T> density_summation_bulk_name() {
+  return AttributeName<T>("density summation bulk");
+}
+
+template <class T> inline static AttributeName<T> initial_density_name() {
+  return AttributeName<T>("initial density");
+}
+
+template <class T> inline static AttributeName<T> density_name() {
+  return AttributeName<T>("density");
+}
+
+template <class T> inline static AttributeName<T> interpolated_mass_name() {
+  return AttributeName<T>("interpolated mass");
+}
+
+template <class T, int dim>
+inline static AttributeName<Vector<T, dim>> normal_name() {
+  return AttributeName<Vector<T, dim>>("normal");
+}
+
+template <class TV> inline static AttributeName<TV> X0_name() {
+  return AttributeName<TV>("X0");
+}
+
+enum CONFIG_SCHEME {
+  CONFIG_TOTAL_LAGRANGIAN,
+  CONFIG_UPDATE_LAGRANGIAN,
+  CONFIG_AU_LAGRANGIAN
+};
+inline static AttributeName<CONFIG_SCHEME> config_scheme_name() {
+  return AttributeName<CONFIG_SCHEME>("config scheme");
+}
+
+template <class T, int manifold_dim>
+inline static AttributeName<Vector<T, manifold_dim + 1>> bary_weights_name() {
+  return AttributeName<Vector<T, manifold_dim + 1>>("bary_weights");
+}
+
+inline static AttributeName<int> parent_element_name() {
+  return AttributeName<int>("parent_element");
+}
+
+template <class T> inline static AttributeName<T> saturation_name() {
+  return AttributeName<T>("saturation");
+}
+
+template <class T> inline static AttributeName<T> cohesion_base_name() {
+  return AttributeName<T>("cohesion_base");
+}
+
+template <class T, int dim>
+inline static AttributeName<Eigen::Matrix<T, dim, dim>> F_name() {
+  return AttributeName<Eigen::Matrix<T, dim, dim>>("F");
+}
+
+template <class T, int dim>
+inline static AttributeName<Eigen::Matrix<T, dim, dim>> F_s_name() {
+  return AttributeName<Eigen::Matrix<T, dim, dim>>("F_s");
+}
+
+template <class T, int dim>
+inline static AttributeName<Eigen::Matrix<T, dim, dim>> F_sn_name() {
+  return AttributeName<Eigen::Matrix<T, dim, dim>>("F_sn");
+}
+
+template <class T, int dim>
+inline static AttributeName<Eigen::Matrix<T, dim, dim>> FEN_name() {
+  return AttributeName<Eigen::Matrix<T, dim, dim>>("Fe_Nonequilibrated");
+}
+
+template <class T> inline static AttributeName<T> water_pressure_name() {
+  return AttributeName<T>("water_pressure");
+}
+
+template <class T, int dim>
+inline static AttributeName<Eigen::Matrix<T, dim, 1>>
+water_grad_porosity_name() {
+  return AttributeName<Eigen::Matrix<T, dim, 1>>("water_grad_porosity");
+}
+
+template <class T> inline static AttributeName<T> conductivity_name() {
+  return AttributeName<T>("conductivity");
+}
+
+template <class T> inline static AttributeName<T> capacity_name() {
+  return AttributeName<T>("capacity");
+}
+
+template <class TM> inline static AttributeName<TM> vtau_name() {
+  return AttributeName<TM>("vtau");
+}
+
+template <class T> inline static AttributeName<T> yield_stress_name() {
+  return AttributeName<T>("yield_stress");
+}
+
+// template <class T>
+// inline static AttributeName<T> p_name()
+// {
+//     return AttributeName<T>("p");
+// }
+
+// template <class T>
+// inline static AttributeName<T> q_name()
+// {
+//     return AttributeName<T>("q");
+// }
+
+template <class TV> inline static AttributeName<TV> fp_name() {
+  return AttributeName<TV>("fp");
+}
+
+static inline AttributeName<int> species_name() {
+  return AttributeName<int>("species");
+}
+
+template <class T> inline static AttributeName<T> F_Dilational_name() {
+  return AttributeName<T>("F_Dilational");
+}
+
+template <class TM> inline static AttributeName<TM> F_Distortional_name() {
+  return AttributeName<TM>("F_Distortional");
+}
+
+enum MATERIAL_PHASE_ENUM { MATERIAL_PHASE_SOLID, MATERIAL_PHASE_FLUID };
+inline static AttributeName<MATERIAL_PHASE_ENUM> material_phase_name() {
+  return AttributeName<MATERIAL_PHASE_ENUM>("material phase");
+}
+
+enum MATERIAL_PROPERTY_ENUM {
+  MATERIAL_PROPERTY_COMPRESSIBLE,
+  MATERIAL_PROPERTY_INCOMPRESSIBLE
+};
+inline static AttributeName<MATERIAL_PROPERTY_ENUM> material_property_name() {
+  return AttributeName<MATERIAL_PROPERTY_ENUM>("material_property");
+}
+
+} // namespace ZIRAN
+#endif

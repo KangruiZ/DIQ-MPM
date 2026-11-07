@@ -1,0 +1,15 @@
+// The list of F (elastic) constitutive models the mixed F/J MPM force supports.
+//
+// This is an X-macro list: include it after defining FJMIXED_F_MODEL(Model).
+// It drives BOTH the runtime dispatch in FJMixedForce.h AND the explicit
+// addFJMaterial<Model, QuadraticVolumePenalty> instantiations in
+// Lib/MPM/instantiations/MpmParticleRange3d.cpp.
+//
+// To add an elastic model to the coupling: add its header to
+// Physics/ConstitutiveModel/ (auto-picked-up umbrella + globbed .cpp) and add
+// one FJMIXED_F_MODEL(YourModel) line here, then rebuild. Nothing else.
+//
+// Model is the bare class template name; the T/dim are supplied by the includer.
+FJMIXED_F_MODEL(CorotatedIsotropic)
+FJMIXED_F_MODEL(LinearCorotated)
+FJMIXED_F_MODEL(PDIsotropic)
